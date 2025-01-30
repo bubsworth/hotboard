@@ -1,0 +1,16 @@
+<%= turbo_frame_tag ticket do %>
+  <div id="<%= dom_id ticket %>">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Title:</strong>
+      <%= ticket.title %>
+    </p>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Description:</strong>
+      <%= ticket.description %>
+    </p>
+  </div>
+  <%= link_to "Edit this ticket", edit_ticket_path(ticket), class: "..." %>
+  <div class="inline-block ml-2">
+    <%= button_to "Destroy this ticket", ticket, method: :delete, data: {turbo_frame: "top"}, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+  </div>
+<% end %>

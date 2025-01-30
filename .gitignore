@@ -40,13 +40,3 @@ tmp
 # Ignore the .DS_Store file
 **/.DS_Store
 
-/coverage
-coverage/.last_run.json
-coverage/.resultset.json
-coverage/index.html
-/.idea/ppm.iml
-/.idea/vcs.xml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/.gitignore
-/.idea/inspectionProfiles/Project_Default.xml
