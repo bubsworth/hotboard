@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+one = Ticket.create!(
+  title: "Title one",
+  description: "Description one",
+)
+two = Ticket.create!(
+  title: "Title two",
+  description: "Description one",
+)
+three = Ticket.create!(
+  title: "Title three",
+  description: "Description three",
+)
