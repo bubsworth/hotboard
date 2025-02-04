@@ -3,9 +3,7 @@
 one:
   title: Title one
   description: Description one
-  state: backlog
 
 two:
   title: Title two
   description: Description two
-  state: backlog
