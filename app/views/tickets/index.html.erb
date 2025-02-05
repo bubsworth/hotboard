@@ -1,19 +1,19 @@
 <%= turbo_stream_from "main-board" %>
+
 <div class="w-full" id="page_content">
   <%= render "notice"%>
+
   <% content_for :title, "Tickets" %>
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Tickets</h1>
-    <%= link_to "New ticket", new_ticket_path, data: {turbo_frame: dom_id(@new_ticket)}, class: "..." %>
-  </div> 
+  </div>
+
   <%= turbo_frame_tag @new_ticket %>
 
-  <div id="tickets" class="flex flex-grow space-x-4 overflow-x-auto">
-    <div class="flex flex-grow space-x-4 overflow-x-auto" data-controller="drag">
-      <% Ticket.states.keys.each do |state| %>
-        <%= render "column", state:, tickets: @tickets.fetch(state, []) %>
-      <% end %>
-    </div>
+  <div class="flex flex-grow space-x-4 overflow-x-auto" data-controller="drag">
+    <% Ticket.states.keys.each do |state| %>
+      <%= render "column", state:, tickets: @tickets.fetch(state, []) %>
+    <% end %>
   </div>
 </div>
