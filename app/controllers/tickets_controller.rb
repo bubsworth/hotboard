@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_action :set_ticket, only: %i[ show edit update destroy ]
+  before_action :set_ticket, only: %i[ show edit update update_state destroy ]
 
   # GET /tickets
   def index
@@ -48,6 +48,11 @@ class TicketsController < ApplicationController
   def destroy
     @ticket.destroy!
     redirect_to tickets_url, notice: "Ticket was successfully destroyed.", status: :see_other
+  end
+
+  def update_state
+    @ticket.update(state: params.require(:state))
+    redirect_back_or_to root_path
   end
 
   private
